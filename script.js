@@ -5,6 +5,9 @@ var times = $('.time-block')
 
 
 $(function () {
+
+var currentTime = dayjs().format("HH")
+console.log(currentTime)
 saveBtn.on('click') 
 });
 
