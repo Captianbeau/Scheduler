@@ -8,10 +8,17 @@ $(function () {
 
 var currentTime = dayjs().format("HH")
 console.log(currentTime)
-saveBtn.on('click') 
-if(notice.matches("hour-9")){
-    setLocalStorage("9AM",)
-}
+saveBtn.on('click',function(event){
+var saveTodo = $(event.target)
+ localStorage.setItem('hour-9',JSON.stringify($(saveTodo).siblings("textarea").value))
+})
+
+
+
+
+})
+
+
 
 
 // class= past,present or future  id = hour-9
