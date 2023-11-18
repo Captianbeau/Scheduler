@@ -1,6 +1,5 @@
 
 var saveBtn = $('.saveBtn')
-var description = $('.description')
 var times = $('.time-block')
 
 
@@ -8,9 +7,11 @@ $(function () {
 
 var currentTime = dayjs().format("HH")
 console.log(currentTime)
-saveBtn.on('click',function(event){
-var saveTodo = $(event.target)
- localStorage.setItem('hour-9',JSON.stringify($(saveTodo).siblings("textarea").value))
+times.on('click','.saveBtn',function(event){
+    
+event.preventDefault()
+var description = $(event.target).siblings('.description').val();
+console.log(description)
 })
 
 
