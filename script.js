@@ -9,16 +9,21 @@ var currentTime = dayjs().format("HH")
 console.log(currentTime)
 times.on('click','.saveBtn',function(event){
 
+
 event.preventDefault()
 // this is the button sibling <textarea input
 var description = $(event.target).siblings('.description').val();
-if($(event.target).parent("#hour-9")){
+var toSave = $(event.target).parent('div');
+console.log(toSave.attr('id'))
+
+if(toSave.attr('id') == 'hour-9'){
     console.log("nine hourt")
 localStorage.setItem('hour-9',description)
-}else if($(event.target).parent("hour-10")){
+}else if(toSave.attr('id') == 'hour-10'){
     console.log("tenhoue")
 localStorage.setItem('hour-10',description)
 }
+
 // for(var i = 9; i<= 17; i++){
     
 //     hour[i].textarea.textContent = localStorage.getItem('hour-',JSON.parse())
