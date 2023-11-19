@@ -1,8 +1,8 @@
 # Scheduler
 ## Description
-This application is a scheduler for employees. They can type their daily tasks into the type space and save it with a save button and it will stay when the page is refreshed. The colors of the background indicate the time of day by changing according to the time. With this scheduler they can keep track of their tasks throughout the day.
+This application is a scheduler for employees. They can type their daily tasks into the type space and save it with a save button and it will stay when the page is refreshed. The date is at the top of the page and the colors of the background indicate the time of day by changing according to the time. With this scheduler they can keep track of their tasks throughout the day.
 ## Webpage
-[Scheduler]()
+[Scheduler](https://captianbeau.github.io/Scheduler/)
 ## Usage
 First type the task into the time’s text-box.\
 ![Type Example](./Screenshots/TypeExample.png)\
