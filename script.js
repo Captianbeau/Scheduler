@@ -1,9 +1,10 @@
-
+// query selectors
 var saveBtn = $('.groupBtn')
 var times = $('.time-block')
 var schedule = $('.container-lg')
 var today = $('#currentDay')
 
+// getting items from storage
 var ninthHour = localStorage.getItem('hour-09')||''
 var tenthHour = localStorage.getItem('hour-10')||''
 var eleventhHour = localStorage.getItem('hour-11')||''
@@ -14,9 +15,9 @@ var fifteenthHour = localStorage.getItem('hour-15')||''
 var sixteenthHour = localStorage.getItem('hour-16')||''
 var seventeenthHour = localStorage.getItem('hour-17')||''
 
+// $function start
 $(function () {
-console.log(schedule.children('div'))
-
+//  
 today.text(dayjs().format('dddd MMM D YYYY'))
 
 currentTime = dayjs().format('HH')
@@ -26,15 +27,11 @@ if(schedule.children('div').eq(i).attr('id') < "hour-"+currentTime){
     
 }else if(schedule.children('div').eq(i).attr('id')> "hour-"+currentTime){
     schedule.children('div').eq(i).addClass('future')
-    console.log(schedule.children('div').eq(i).attr('id'))
+   
 }else{
     schedule.children('div').eq(i).addClass('present')
 }
 }
-console.log(currentTime)
-// for(var i = 9; i<= 17; i++){
-   //hour[i].textarea.textContent = localStorage.getItem('hour-',JSON.parse()) 
-// }
 schedule.children('div').eq(0).children('textarea').val(ninthHour);
 schedule.children('div').eq(1).children('textarea').val(tenthHour);
 schedule.children('div').eq(2).children('textarea').val(eleventhHour);
@@ -47,10 +44,10 @@ schedule.children('div').eq(8).children('textarea').val(seventeenthHour);
 
 times.on('click','.saveBtn',function(event){
 event.preventDefault()
-// this is the button sibling <textarea input
+
 var description = $(event.target).siblings('.description').val();
 var toSave = $(event.target).parent('div');
-console.log(toSave.attr('id'))
+
 
 if(toSave.attr('id') == 'hour-09'){
     localStorage.setItem('hour-09',description)
@@ -72,11 +69,9 @@ if(toSave.attr('id') == 'hour-09'){
     localStorage.setItem('hour-17',description)
 }
 })
-console.log("hour-"+10)
+
 })
 
 
 
 
-// class= past,present or future  id = hour-9
-// only one present at a time
