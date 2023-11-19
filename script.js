@@ -2,6 +2,7 @@
 var saveBtn = $('.groupBtn')
 var times = $('.time-block')
 var schedule = $('.container-lg')
+var today = $('#currentDay')
 
 var ninthHour = localStorage.getItem('hour-09')||''
 var tenthHour = localStorage.getItem('hour-10')||''
@@ -15,6 +16,9 @@ var seventeenthHour = localStorage.getItem('hour-17')||''
 
 $(function () {
 console.log(schedule.children('div'))
+
+today.text(dayjs().format('dddd MMM D YYYY'))
+
 currentTime = dayjs().format('HH')
 for(var i = 0; i < 9; i++){
 if(schedule.children('div').eq(i).attr('id') < "hour-"+currentTime){
